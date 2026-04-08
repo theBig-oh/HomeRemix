@@ -30,11 +30,8 @@ Clone the repo
 
 Run the follwing commands
     
-    Npm install
-
-    Npm run watch (This runs the scss/sass taskrunner)
-
-    Npm start
+    npm install
+    npm start
 
 Runs off localhost:8080 
 
