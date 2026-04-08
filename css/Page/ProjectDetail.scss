@@ -1,4 +1,5 @@
-@import '../settings.scss';
+@use '../settings' as *;
+@use '../extend' as *;
 
 #ProjectsCon {
 

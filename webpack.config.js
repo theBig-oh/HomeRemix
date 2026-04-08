@@ -1,81 +1,60 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+
 module.exports = {
-	entry:{
-		js : "./src/app.js",
-		css: "./css/style.css",
-
-		
-	},
-
-	output: {
-		/*path: 'build',*/
-
-		filename:'bundle.js'
-
-	},
-	
-	module: {
-		rules: [{
-        test: /\.(png|jpg|gif)$/,
+  entry: './src/app.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.(scss|css)$/,
         use: [
+          'style-loader',
           {
-            loader: 'file-loader',
-            options: {}
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              implementation: require('sass'),
+              sassOptions: {
+                includePaths: ['css']
+              }
+            }
           }
         ]
-      },
-			{
-			  test: /\.(gif|png|jpe?g|svg)$/,
-			  use: [
-			    'file-loader',
-			    {
-			      loader: 'image-webpack-loader',
-			      options: {
-			        bypassOnDebug: true, // webpack@1.x
-			        disable: true, // webpack@2.x and newer
-			      },
-			    },
-			  ],
-			}
-		],
-		loaders:[
-		 {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015'],
-         
-        }
-      }, 
+      }
+    ]
+  },
+  devServer: {
+    static: [
+      path.join(__dirname, 'dist'),
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
-      },
-			{
- 			 test: /\.(ttf|otf)(\?v=\d+\.\d+\.\d+)?$/,
-			  loader: 'url?limit=65000&mimetype=application/octet-stream&name=public/fonts/[name].[ext]'
-
-			},
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader'
-			},
-			{
-				test: /\.(scss|css)$/,
-				loader:"style-loader!css-loader!sass-loader"
-			},
-  		{
-    	 test: /\.json$/,
-        loader: 'json-loader'
-  		},
-
-		]
-
-	}
-
-
+        directory: path.join(__dirname, 'images'),
+        publicPath: '/images'
+      }
+    ],
+    compress: true,
+    port: 8080,
+    hot: true
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ]
 };

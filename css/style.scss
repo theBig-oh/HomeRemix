@@ -1,5 +1,6 @@
-@import 'settings.scss';
-@import './Page/Index.scss';
+@use 'settings' as *;
+@use 'extend' as *;
+@use 'Page/Index';
 
 body {
 	background: $darkBlack;

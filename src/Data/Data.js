@@ -55,11 +55,11 @@ var data = {
                   "level": 10,
                 },
                 {
-                  'name':"Adobe Illustrator CS6",
-                  "level": 8.8
+                  'name':"ReactJS",
+                  "level": 7.5
                 },
                 {
-                  'name':"Adobe Photoshop CS6",
+                  'name':"VueJS",
                   "level": 7
                 },
                 {
@@ -70,6 +70,20 @@ var data = {
             },
             /* Work Exp */
             "work": [
+              {
+                "name": "People Inc.",
+                "position": "Software Developer",
+                "location": "New York, New York",
+                "startDate": "Feb 2019",
+                "endDate": "Present",
+                "isPresent": true,
+                "duties": [
+                  "Building new components using custom framework",
+                  "Implementing designs to further push CPM",
+                  "Working with designers, QA, and product stakeholders",
+                  "Researching new workflows for quicker development process"
+                ]
+              },
               {
                 "name": "Brickwork Software",
                 "position": "Front End Developer",
@@ -98,28 +112,13 @@ var data = {
                   "Creating custom logos and graphic assets to fullfill client needs",
                   "Host and maintain sites"
                 ]
-              },
-              {
-                "name": "CitiGroup",
-                "position": "System Adminstrator",
-                "location": "New York, New York",
-                "startDate": "May 2014",
-                "endDate": "June 2014",
-                "isPresent": false,
-                "duties": [
-                  "Maintaining a group of 10,000 users desktops and network issues",
-                  "Installing new components for clients",
-                  "Building new desktop computers for different users",
-                  "Installing and mounting projectors, monitors, and telephony systems"
-                ]
-              },
-
+              }
             ],
             /* Projects */
             "projects": [
               {
                 "name": "Guitar Tools",
-                "url":"http://guitar.thebigoh.net",
+                "url":"http://guitarredux.thebigoh.net",
                 "framework":"AngularJS (1.x)",
                 "purpose": [
                   "Wanted to help guitarist find their way around the fretboard with music theory",
@@ -127,17 +126,6 @@ var data = {
                   "Made with \"Responsive Design\" in mind, so you can use it on any device."
                 ],
                 "projectImage": "https://i.imgur.com/b4bmsg2.png?1",
-              },
-              {
-                "name": "React PokeDex",
-                "url":"http://reactdex.thebigoh.net",
-                "framework":"ReactJS",
-                "purpose": [
-                  "A pokeDex made in ReactJS",
-                  "Wanted to create one that looks like it came from one of the games",
-                  "Designed all graphic assets in Adobe Illustrator",
-                ],
-                "projectImage": "https://i.imgur.com/7UGoStl.png?1",
               },
               {
                 "name": "AtaByte Hosting",
@@ -149,17 +137,7 @@ var data = {
                   "Parallax effect"
                 ],
                 "projectImage": "https://i.imgur.com/jkVu7mh.jpg?1",
-              },
-              {
-                "name": "Vega Built Gaming",
-                "url":"http://vega.thebigoh.net",
-                "framework":"AngularJS (1.x)",
-                "purpose": [
-                  "Re-design of Vega Built Gaming",
-                  "Logo custom created in Adobe illustrator"
-                ],
-                "projectImage":"https://i.imgur.com/QE8pSFd.png?1",
-              },               
+              }            
                            
 
             ],
